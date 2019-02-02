@@ -1,0 +1,62 @@
+<script src="external/web3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<body>
+  <title>Dark Read</title>
+  <div style="text-align: center">
+    <h1>Dark Read</h1>
+    <div><p>Tool to make reading internal contract state easy. Simply plug in the contract address and the slot (offset to read from). Each slot is 32 bytes. You'll need to have Metamask or an ethereum browser.</p></div>
+    <div>Contract Address:</div>
+    <div><input class="contract-address" value="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48" type="text"></div>
+    <br>
+    <div>Slot:</div>
+    <div><input class="slot" value="7616251639890160809447714111544359812065171195189364993079081710756264753419"></div>
+    <br>
+    <div>
+      <button class="submit">Get Storage</button>
+    </div>
+    <br>
+    <div style="text-align: center">Result:</div>
+    <div class="result"></div>
+    <div>
+      <select class="type">
+        <option value="hex">hex</option>
+        <option value="uint">uint</option>
+        <option value="address">address</option>
+        <option value="string">string</option>
+      </select>
+    </div>
+  </div>
+</body>
+
+<script>
+  window.addEventListener('load', function() {
+
+    // Checking if Web3 has been injected by the browser (Mist/MetaMask)
+    if (typeof web3 !== 'undefined') {
+      // Use Mist/MetaMask's provider
+      web3 = new Web3(web3.currentProvider);
+    } else {
+      console.log('No web3? You should consider trying MetaMask!')
+      // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+      web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+    }
+
+    $('.submit').click(function() {
+      console.log('', web3.version);
+      let contractAddress = $('.contract-address').val();
+      let slot = $('.slot').val();
+      let result = web3.eth.getStorageAt(contractAddress, slot, function(error, result) {
+        console.log('', error, result);
+
+        let type = $('.type').val();
+        console.log('type', type)
+        $('.result').text(result);
+      });
+      console.log('', result);
+    });
+
+  });
+
+</script>
+

@@ -1,0 +1,17 @@
+{
+  "name": "dark-read",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "canoe-solidity": "^0.1.0",
+    "ethereumjs-abi": "^0.6.5",
+    "express": "^4.16.4",
+    "web3": "^1.0.0-beta.37"
+  }
+}
