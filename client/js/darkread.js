@@ -20,8 +20,8 @@ class DarkRead extends React.Component {
     super(props);
 
     this.state = {
-      address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
-      slot: '7616251639890160809447714111544359812065171195189364993079081710756264753419',
+      address: '',
+      slot: '',
       type: 'bytes32',
       data: ''
     };
@@ -116,7 +116,7 @@ class DarkRead extends React.Component {
     const cardStyle = {
       width: '600px',
       margin: '15px auto',  // Center
-      padding: '5px 15px',
+      padding: '10px 15px',
       borderColor: '#ddd',
       borderRadius: '5px',
       borderStyle: 'solid',
@@ -125,7 +125,8 @@ class DarkRead extends React.Component {
       shadowColor: '#aaa',
       shadowOffset: {width: '5px', height: '5px'},
       boxShadow: '0px 0px 10px 3px rgba(200, 200, 200, 1)',
-      position: 'relative'
+      position: 'relative',
+      overflowWrap: 'break-word',
       // centered
       // rounded
       // light gray stroke
@@ -138,6 +139,25 @@ class DarkRead extends React.Component {
     const inputStyle = {
       width: '500px',
       fontSize: '14px',
+      height: '50px',
+      borderColor: 'ddd',
+      borderStyle: 'solid',
+      borderRadius: '5px',
+      padding: '0 10px',
+      textAlign: 'center',
+    };
+    const buttonStyle = {
+      margin: 'auto',
+      height: '50px',
+      width: '150px',
+      borderColor: '#ddd',
+      borderRadius: '5px',
+      borderStyle: 'solid',
+      borderWidth: '1px',
+      backgroundColor: 'rgba(26, 155, 216, 1)',
+      fontSize: '16px',
+      fontWeight: 'bold',
+      color: 'white',
     };
     const typeDropdownStyle = {
       position: 'absolute',
@@ -157,7 +177,7 @@ class DarkRead extends React.Component {
     return (
       <div style={pageStyle}>
         <div style={containerStyle}>
-          <title>Dark Read</title>
+          <title>Dark Read: Reveal internal contract state</title>
           <div>
             <h1 style={titleStyle}>Dark Read</h1>
             <div style={cardStyle}>
@@ -166,19 +186,18 @@ class DarkRead extends React.Component {
                 <p>Dark Read makes reading internal contract state easy. Simply plug in the contract address and the slot (offset from which to read from). Recall that each slow is 32 bytes.</p>
                 <p>Metamask is required.</p>
                 <p>Example: address: 0x1985365e9f78359a9b6ad760e32412f4a445e862, slot: 1, type: string</p>
+                <p>Example2: address: 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48, slot: 7616251639890160809447714111544359812065171195189364993079081710756264753419, type: address</p>
               </div>
             </div>
             <div style={{...cardStyle, textAlign: 'center'}}>
               <div style={cardTitleStyle}>Input</div>
               <br></br>
-              <div>Contract Address:</div>
-              <div><input style={inputStyle} value={this.state.address} onChange={this.handleAddressChange} type='text'></input></div>
+              <div><input style={inputStyle} placeholder='Contract address' value={this.state.address} onChange={this.handleAddressChange} type='text'></input></div>
               <br></br>
-              <div>Slot:</div>
-              <div><input style={inputStyle} value={this.state.slot} onChange={this.handleSlotChange}></input></div>
+              <div><input style={inputStyle} placeholder='Slot' value={this.state.slot} onChange={this.handleSlotChange}></input></div>
               <br></br>
               <div>
-                <button onClick={this.handleRequest}>Get Storage</button>
+                <button style={buttonStyle} onClick={this.handleRequest}>Get Storage</button>
               </div>
             </div>
             <div style={{...cardStyle, textAlign: 'center', height: '200px'}}>
