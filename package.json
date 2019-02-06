@@ -1,17 +1,30 @@
 {
-  "name": "dark-read",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "windmill",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
+    "babel": "NODE_ENV=development npx babel --watch client/js --out-dir public/js",
+    "webpack": "npx webpack --watch"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "canoe-solidity": "^0.1.0",
-    "ethereumjs-abi": "^0.6.5",
-    "express": "^4.16.4",
-    "web3": "^1.0.0-beta.37"
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "dotenv": "^6.2.0",
+    "ejs": "~2.5.7",
+    "ethereumjs-abi": "^0.6.6",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "nodemon": "^1.18.9",
+    "web3": "^1.0.0-beta.41"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "babel-preset-react-app": "^7.0.0",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1"
   }
 }
