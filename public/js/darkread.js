@@ -9,6 +9,7 @@ import _possibleConstructorReturn from "/Users/danielque/git/windmill/node_modul
 import _getPrototypeOf from "/Users/danielque/git/windmill/node_modules/@babel/runtime/helpers/esm/getPrototypeOf";
 import _inherits from "/Users/danielque/git/windmill/node_modules/@babel/runtime/helpers/esm/inherits";
 import _assertThisInitialized from "/Users/danielque/git/windmill/node_modules/@babel/runtime/helpers/esm/assertThisInitialized";
+var _jsxFileName = "/Users/danielque/git/windmill/client/js/darkread.js";
 import * as Web3 from 'web3'; //import $ from 'jquery';
 //import _ from 'underscore';
 //import BigNumber from 'bignumber.js';
@@ -104,13 +105,25 @@ function (_React$Component) {
 
         if (_this.state.type === 'string') {
           decoded = Buffer.from(_this.state.data, 'hex').toString();
-          return React.createElement("div", null, decoded);
+          return React.createElement("div", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 81
+            },
+            __self: this
+          }, decoded);
         }
 
         try {
           decoded = abi.rawDecode([_this.state.type], Buffer.from(_this.state.data, 'hex'));
         } catch (e) {
-          return React.createElement("div", null, "Error decoding");
+          return React.createElement("div", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 87
+            },
+            __self: this
+          }, "Error decoding");
         }
 
         if (_this.state.type === 'bytes32') {
@@ -120,9 +133,21 @@ function (_React$Component) {
         }
 
         decoded = decoded.toString();
-        return React.createElement("div", null, decoded);
+        return React.createElement("div", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 96
+          },
+          __self: this
+        }, decoded);
       } else {
-        return React.createElement("div", null);
+        return React.createElement("div", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 98
+          },
+          __self: this
+        });
       }
     };
 
@@ -187,10 +212,11 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var pageStyle = {
-        backgroundColor: '#f5f5f5'
+        backgroundColor: '#f6f5f5',
+        width: '100vw'
       };
       var containerStyle = {
-        //backgroundColor: '#fff',
+        backgroundColor: '#fff',
         fontFamily: 'sans-serif',
         width: '1200px',
         margin: '0 auto',
@@ -265,57 +291,230 @@ function (_React$Component) {
         fontSize: '14px'
       };
       return React.createElement("div", {
-        style: pageStyle
+        style: pageStyle,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 179
+        },
+        __self: this
       }, React.createElement("div", {
-        style: containerStyle
-      }, React.createElement("title", null, "Dark Read: Reveal internal contract state"), React.createElement("div", null, React.createElement("h1", {
-        style: titleStyle
+        style: containerStyle,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 180
+        },
+        __self: this
+      }, React.createElement("title", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 181
+        },
+        __self: this
+      }, "Dark Read: Reveal internal contract state"), React.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 182
+        },
+        __self: this
+      }, React.createElement("h1", {
+        style: titleStyle,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 183
+        },
+        __self: this
       }, "Dark Read"), React.createElement("div", {
-        style: cardStyle
-      }, React.createElement("div", null, React.createElement("div", {
-        style: cardTitleStyle
-      }, "Instructions"), React.createElement("p", null, "Dark Read makes reading internal contract state easy. Simply plug in the contract address and the slot (offset from which to read from). Recall that each slow is 32 bytes."), React.createElement("p", null, "Metamask is required."), React.createElement("p", null, "Example: address: 0x1985365e9f78359a9b6ad760e32412f4a445e862, slot: 1, type: string"), React.createElement("p", null, "Example2: address: 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48, slot: 7616251639890160809447714111544359812065171195189364993079081710756264753419, type: address"))), React.createElement("div", {
+        style: cardStyle,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 184
+        },
+        __self: this
+      }, React.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 185
+        },
+        __self: this
+      }, React.createElement("div", {
+        style: cardTitleStyle,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 186
+        },
+        __self: this
+      }, "Instructions"), React.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 187
+        },
+        __self: this
+      }, "Dark Read makes reading internal contract state easy. Simply plug in the contract address and the slot (offset from which to read from). Recall that each slow is 32 bytes."), React.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 188
+        },
+        __self: this
+      }, "Metamask is required. Make sure you're on the correct network."), React.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 189
+        },
+        __self: this
+      }, "Example: address: 0x1985365e9f78359a9b6ad760e32412f4a445e862, slot: 1, type: string"), React.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 190
+        },
+        __self: this
+      }, "Example2: address: 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48, slot: 7616251639890160809447714111544359812065171195189364993079081710756264753419, type: address"))), React.createElement("div", {
         style: _objectSpread({}, cardStyle, {
           textAlign: 'center'
-        })
+        }),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 193
+        },
+        __self: this
       }, React.createElement("div", {
-        style: cardTitleStyle
-      }, "Input"), React.createElement("br", null), React.createElement("div", null, React.createElement("input", {
+        style: cardTitleStyle,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 194
+        },
+        __self: this
+      }, "Input"), React.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 195
+        },
+        __self: this
+      }), React.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 196
+        },
+        __self: this
+      }, React.createElement("input", {
         style: inputStyle,
         placeholder: "Contract address",
         value: this.state.address,
         onChange: this.handleAddressChange,
-        type: "text"
-      })), React.createElement("br", null), React.createElement("div", null, React.createElement("input", {
+        type: "text",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 196
+        },
+        __self: this
+      })), React.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 197
+        },
+        __self: this
+      }), React.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 198
+        },
+        __self: this
+      }, React.createElement("input", {
         style: inputStyle,
         placeholder: "Slot",
         value: this.state.slot,
-        onChange: this.handleSlotChange
-      })), React.createElement("br", null), React.createElement("div", null, React.createElement("button", {
+        onChange: this.handleSlotChange,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 198
+        },
+        __self: this
+      })), React.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 199
+        },
+        __self: this
+      }), React.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 200
+        },
+        __self: this
+      }, React.createElement("button", {
         style: buttonStyle,
-        onClick: this.handleRequest
+        onClick: this.handleRequest,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 201
+        },
+        __self: this
       }, "Get Storage"))), React.createElement("div", {
         style: _objectSpread({}, cardStyle, {
           textAlign: 'center',
           height: '200px'
-        })
+        }),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 204
+        },
+        __self: this
       }, React.createElement("div", {
-        style: typeDropdownStyle
+        style: typeDropdownStyle,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 205
+        },
+        __self: this
       }, React.createElement("select", {
         value: this.state.type,
-        onChange: this.handleTypeChange
+        onChange: this.handleTypeChange,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 206
+        },
+        __self: this
       }, React.createElement("option", {
-        value: "bytes32"
+        value: "bytes32",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 207
+        },
+        __self: this
       }, "bytes32"), React.createElement("option", {
-        value: "uint256"
+        value: "uint256",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 208
+        },
+        __self: this
       }, "uint256"), React.createElement("option", {
-        value: "address"
+        value: "address",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 209
+        },
+        __self: this
       }, "address"), React.createElement("option", {
-        value: "string"
+        value: "string",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 210
+        },
+        __self: this
       }, "string"))), React.createElement("div", {
-        style: cardTitleStyle
+        style: cardTitleStyle,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 213
+        },
+        __self: this
       }, "Result"), React.createElement("div", {
-        style: resultStyle
+        style: resultStyle,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 214
+        },
+        __self: this
       }, this.renderData(this.state.result))))));
     }
   }]);

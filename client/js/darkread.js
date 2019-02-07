@@ -101,10 +101,11 @@ class DarkRead extends React.Component {
 
   render() {
     const pageStyle = {
-      backgroundColor: '#f5f5f5'
+      backgroundColor: '#f6f5f5',
+      width: '100vw'
     }
     const containerStyle = {
-      //backgroundColor: '#fff',
+      backgroundColor: '#fff',
       fontFamily: 'sans-serif',
       width: '1200px',
       margin: '0 auto',  // Center
@@ -184,7 +185,7 @@ class DarkRead extends React.Component {
               <div>
                 <div style={cardTitleStyle}>Instructions</div>
                 <p>Dark Read makes reading internal contract state easy. Simply plug in the contract address and the slot (offset from which to read from). Recall that each slow is 32 bytes.</p>
-                <p>Metamask is required.</p>
+                <p>Metamask is required. Make sure you're on the correct network.</p>
                 <p>Example: address: 0x1985365e9f78359a9b6ad760e32412f4a445e862, slot: 1, type: string</p>
                 <p>Example2: address: 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48, slot: 7616251639890160809447714111544359812065171195189364993079081710756264753419, type: address</p>
               </div>
